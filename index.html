@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pedido Especial</title>
+<style>
+  body {
+    background: #1e1e2f;
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+  #message {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
+  #btn {
+    background: #4caf50;
+    border: none;
+    color: white;
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  #btn:hover {
+    background: #45a049;
+  }
+  #finalMessage {
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: #ff4081;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  #finalMessage.show {
+    opacity: 1;
+    animation: pulse 1.5s infinite alternate;
+  }
+  @keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+</style>
+</head>
+<body>
+  <div id="message">
+    Oi, Manuela!<br />
+    Tenho uma coisa pra te mostrar.<br />
+    Clica no botão e vê o que acontece 😉
+  </div>
+  <button id="btn">Clique aqui</button>
+  <div id="finalMessage">Quer namorar comigo? ❤️</div>
+
+<script>
+  const btn = document.getElementById('btn');
+  const finalMessage = document.getElementById('finalMessage');
+  const message = document.getElementById('message');
+
+  btn.addEventListener('click', () => {
+    finalMessage.classList.add('show');
+    btn.style.display = 'none';
+    message.style.display = 'none';
+  });
+</script>
+</body>
+</html>
